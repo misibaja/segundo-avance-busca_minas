@@ -7,9 +7,9 @@
 package busca_minas_proyecto;
 
 /**
- *
- * @author user Minor Sibaja Calvo
- */ //19/07/2016
+ **
+ **@author user Minor Sibaja Calvo
+ **/ //19/07/2016
 //esta clase se encarga de hacer los cuadritos en el busca minas
 public class espacios {
     private int minasAlrededor;
@@ -17,23 +17,23 @@ public class espacios {
     private boolean revelado;
     
     /**
-     *Este seria el constructor del espacio
-     */
+     **Este seria el constructor del espacio
+     **/
     public espacios(){
     minasAlrededor =0;
     esMina=false;
     }
 
     /**
-     *Este seria el encargado de decir a un espacio si es mina o no...
-     */
+     **Este seria el encargado de decir a un espacio si es mina o no...
+     **/
     public void colocarMina(){
     esMina= true;
     }
 
     /**
-     *este se encarga de aumentar el numero de minas alrededor de este espacio
-     */
+     **este se encarga de aumentar el numero de minas alrededor de este espacio
+     **/
     public void aumentarMinas(){
     if(esMina==false){
       minasAlrededor++; 
@@ -41,8 +41,8 @@ public class espacios {
   } 
 
     /**
-     *Me va indicar si el espacio es una mina o no...
-     */ //metodo para retornar es mina devuelve el valor para evaluar el valor valga la redundancia
+     **Me va indicar si el espacio es una mina o no...
+     **/ //metodo para retornar es mina devuelve el valor para evaluar el valor valga la redundancia
     public boolean verMina(){
     return esMina;
     }
