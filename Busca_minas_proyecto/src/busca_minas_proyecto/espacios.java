@@ -47,5 +47,34 @@ public class espacios {
     return esMina;
     }
     
+    /**
+     *Indica "si ya visitaste este espacio mientras estas jugando" sirve para saber si uno gana
+     * @return
+     */
+    public boolean verRevelado(){
+    return revelado;
+    
+    }
+   
+    /**
+     *En el momento que visite el espacio el este cambia su estado a revelado
+     */
+    public void cambiarEstado(){
+    revelado=true;
+    }
+//toString imprime en pantalla cuando le dices System.out.println
+    @Override
+    public String toString(){
+    String res="*";
+    if(revelado==true){
+        res=""+minasAlrededor;
+    }
+    if(esMina==true&&revelado==true)
+        res="X";
+    return res;
+    }
+    
 }
+
+
 

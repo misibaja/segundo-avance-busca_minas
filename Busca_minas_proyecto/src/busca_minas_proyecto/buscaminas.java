@@ -60,7 +60,8 @@ public class buscaminas {
     
     /**
      ** este metodo se encarga de averiguar cuantas minas alrededor tiene un espacio en el buscaminas 
-     ** la parte mas dificil xD :S
+     ** la parte mas dificil xD :S tomando en cuenta el analisis sobre el uso del "backtraking" en teoria es un algoritmo con muchas
+     ** alternativas,puede ser, movernos hacia arriba, abajo, derecha, Izquierda... :)
      **@param buscaminas
      **@param i
      **@param j
@@ -137,7 +138,35 @@ public class buscaminas {
      **@return
      **/
     public espacios[][] juego(espacios[][] buscaminas, int columnas, int filas, int contador) {
+        imprimir(buscaminas,0,0,columnas,filas);
+        System.out.println("n"+"Ingrese el numero de fila y columnas que desea explorar"+"n");
+        System.out.print("Ingrese el numero de la fila: ");
+        int f=scan.nextInt();
+        System.out.print("Ingrese el numero de la columna: ");
+        int c= scan.nextInt();
+        System.out.print("n"+"n");
+        if (f<=filas&&c<=columnas){
+        if(buscaminas[c-1][f-1].verMina()==false){
+        buscaminas[c-1][f-1].cambiarEstado();
+        contador--;
+        }
+        if(contador==0){
+            System.out.println("n"+"n"+"GANASTE!!"+"n"+"n"+"FELICIDADES!!");
+        }
+        else{
+            if(buscaminas[c-1][f-1].verMina()==true){
+            imprimir(buscaminas,0,0,columnas,filas);
+            }
+            else{
+            juego(buscaminas,columnas,filas,contador);
+            }
+        }
+    }
         
+        else{
+        juego(buscaminas,columnas,filas,contador);
+        }   
+        return buscaminas;
     }
     
 }
