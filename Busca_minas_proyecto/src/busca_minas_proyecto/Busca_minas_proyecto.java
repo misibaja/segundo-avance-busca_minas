@@ -14,7 +14,6 @@ import javax.swing.JOptionPane; // lo pienso retomar al final para retoques
  **@author user Minor Sibaja Calvo 
  **/ // 19/07/2016
 public class Busca_minas_proyecto {
-
     /**
      **@param args the command line arguments 
      **/
